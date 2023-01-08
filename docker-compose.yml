@@ -5,9 +5,9 @@ services:
     ports:
       - 5434:5432
     environment:
-      POSTGRES_USER: t3todo
-      POSTGRES_PASSWORD: t3todo
-      POSTGRES_DB: t3todo
+      POSTGRES_USER: udemy
+      POSTGRES_PASSWORD: udemy
+      POSTGRES_DB: udemy
     restart: always
     networks:
       - lesson
