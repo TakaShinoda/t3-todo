@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /**
  * YOU PROBABLY DON'T NEED TO EDIT THIS FILE, UNLESS:
  * 1. You want to modify request context (see Part 1)
@@ -21,6 +23,7 @@ import { type Session } from "next-auth";
 
 import { getServerAuthSession } from "../auth";
 import { prisma } from "../db";
+import { ZodError } from 'zod'
 
 type CreateContextOptions = {
   session: Session | null;
@@ -71,8 +74,17 @@ const t = initTRPC
   .context<Awaited<ReturnType<typeof createTRPCContext>>>()
   .create({
     transformer: superjson,
-    errorFormatter({ shape }) {
-      return shape;
+    errorFormatter({ shape, error }) {
+      return {
+        ...shape,
+        data: {
+          ...shape.data,
+          zodError:
+            error.code === 'BAD_REQUEST' && error.cause instanceof ZodError
+              ? error.cause.flatten()
+              : null,
+        },
+      };
     },
   });
 
