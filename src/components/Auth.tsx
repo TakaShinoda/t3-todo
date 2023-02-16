@@ -5,7 +5,7 @@ export const Auth: FC = () => {
   return (
     <div>
       <button
-        className="rounded bg-blue-600 py-2 px-4 font-bold text-white hover:bg-blue-800"
+        className="rounded bg-zinc-800 py-2 px-4 font-bold text-white hover:bg-zinc-700"
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onClick={() => signIn("github")}
       >
