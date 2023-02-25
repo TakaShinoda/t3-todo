@@ -1,13 +1,20 @@
-import type { FC } from "react";
-import { signOut, useSession } from "next-auth/react";
-import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
-import { Avatar, AvatarImage, AvatarFallback } from "../ui/Avatar";
+import type { FC } from "react"
+import { signOut, useSession } from "next-auth/react"
+import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid"
+import { Avatar, AvatarImage, AvatarFallback } from "../ui/Avatar"
 
 export const Header: FC = () => {
-  const { data: session } = useSession();
-  console.log(session);
+  const { data: session } = useSession()
   if (!session) {
-    return <></>;
+    return <></>
+  }
+  const goTop = () => {
+    window.location.href = "/"
+  }
+
+  const logout = () => {
+    signOut()
+    goTop()
   }
 
   return (
@@ -21,7 +28,8 @@ export const Header: FC = () => {
                 <img
                   className="hidden h-8 w-auto lg:block"
                   src="https://user-images.githubusercontent.com/95541290/184307358-ebf8be63-e434-49d9-8181-90269ad79599.png"
-                  alt="Your Company"
+                  alt="T3 Stack のロゴ"
+                  onClick={goTop}
                 />
               </div>
               <div className="hidden sm:ml-6 sm:block">
@@ -61,8 +69,7 @@ export const Header: FC = () => {
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <ArrowLeftOnRectangleIcon
                 className="h-8 w-8 cursor-pointer p-1 text-gray-400 hover:text-white"
-                // eslint-disable-next-line @typescript-eslint/no-misused-promises
-                onClick={() => signOut()}
+                onClick={logout}
               />
               <Avatar className="m-4 h-8 w-8">
                 <AvatarImage
@@ -76,5 +83,5 @@ export const Header: FC = () => {
         </div>
       </nav>
     </header>
-  );
-};
+  )
+}
