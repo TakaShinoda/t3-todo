@@ -1,7 +1,7 @@
-import type { ElementRef, ComponentPropsWithoutRef } from "react";
-import { forwardRef } from "react";
-import * as AvatarPrimitive from "@radix-ui/react-avatar";
-import { cn } from "../../utils/cn";
+import type { ElementRef, ComponentPropsWithoutRef } from "react"
+import { forwardRef } from "react"
+import * as AvatarPrimitive from "@radix-ui/react-avatar"
+import { cn } from "../../utils/cn"
 
 const Avatar = forwardRef<
   ElementRef<typeof AvatarPrimitive.Root>,
@@ -15,8 +15,8 @@ const Avatar = forwardRef<
     )}
     {...props}
   />
-));
-Avatar.displayName = AvatarPrimitive.Root.displayName;
+))
+Avatar.displayName = AvatarPrimitive.Root.displayName
 
 const AvatarImage = forwardRef<
   ElementRef<typeof AvatarPrimitive.Image>,
@@ -27,8 +27,8 @@ const AvatarImage = forwardRef<
     className={cn("aspect-square h-full w-full", className)}
     {...props}
   />
-));
-AvatarImage.displayName = AvatarPrimitive.Image.displayName;
+))
+AvatarImage.displayName = AvatarPrimitive.Image.displayName
 
 const AvatarFallback = forwardRef<
   ElementRef<typeof AvatarPrimitive.Fallback>,
@@ -42,7 +42,7 @@ const AvatarFallback = forwardRef<
     )}
     {...props}
   />
-));
-AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
+))
+AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 
-export { Avatar, AvatarImage, AvatarFallback };
+export { Avatar, AvatarImage, AvatarFallback }

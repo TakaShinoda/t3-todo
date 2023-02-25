@@ -1,27 +1,22 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-
-import Link from "next/link";
-import type { NextPage } from "next";
-import { useRouter } from "next/router";
-import { format } from "date-fns";
-import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
-import { api } from "../../utils/api";
-import { Layout } from "../../components/layouts/Layout";
+import Link from "next/link"
+import type { NextPage } from "next"
+import { useRouter } from "next/router"
+import { format } from "date-fns"
+import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid"
+import { api } from "../../utils/api"
+import { Layout } from "../../components/layouts/Layout"
 
 const SingleTaskPage: NextPage = () => {
-  const router = useRouter();
-  const taskId = router.query.taskId as string;
+  const router = useRouter()
+  const taskId = router.query.taskId as string
   const { data, isLoading, error } = api.todo.getSingleTask.useQuery({
     taskId,
-  });
+  })
   if (isLoading) {
-    return <Layout title="Task Detail">Loading single task...</Layout>;
+    return <Layout title="Task Detail">Loading...</Layout>
   }
   if (error) {
-    return <Layout title="Task Detail">{error.message}</Layout>;
+    return <Layout title="Task Detail">{error.message}</Layout>
   }
   return (
     <Layout title="Task Detail">
@@ -62,6 +57,6 @@ const SingleTaskPage: NextPage = () => {
         </div>
       </div>
     </Layout>
-  );
-};
-export default SingleTaskPage;
+  )
+}
+export default SingleTaskPage

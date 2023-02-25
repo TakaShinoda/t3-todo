@@ -1,27 +1,27 @@
-import type { FC, FormEvent } from "react";
-import useStore from "../store";
-import { useMutateTask } from "../hooks/useMutateTask";
+import type { FC, FormEvent } from "react"
+import useStore from "../store"
+import { useMutateTask } from "../hooks/useMutateTask"
 
 export const TaskForm: FC = () => {
-  const { createTaskMutation, updateTaskMutation } = useMutateTask();
-  const { editedTask } = useStore();
-  const update = useStore((state) => state.updateEditedTask);
+  const { createTaskMutation, updateTaskMutation } = useMutateTask()
+  const { editedTask } = useStore()
+  const update = useStore((state) => state.updateEditedTask)
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault()
     if (editedTask.taskId === "") {
       createTaskMutation.mutate({
         title: editedTask.title,
         body: editedTask.body,
-      });
+      })
     } else {
       updateTaskMutation.mutate({
         taskId: editedTask.taskId,
         title: editedTask.title,
         body: editedTask.body,
-      });
+      })
     }
-  };
+  }
 
   return (
     <form onSubmit={handleSubmit} className="mb-5 text-center">
@@ -49,9 +49,9 @@ export const TaskForm: FC = () => {
         {createTaskMutation.error?.data?.zodError &&
           createTaskMutation.error.data.zodError.fieldErrors.body}
       </p>
-      <button className="rounded bg-indigo-600 py-1 px-3 text-white hover:bg-indigo-700 focus:outline-none">
+      <button className="rounded bg-blue-600 py-1 px-3 text-white hover:bg-blue-700 focus:outline-none">
         {editedTask.taskId === "" ? "Create" : "Update"}
       </button>
     </form>
-  );
-};
+  )
+}

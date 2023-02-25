@@ -1,6 +1,6 @@
-import type { FC, ReactNode } from "react";
-import Head from "next/head";
-import { Header } from "./Header";
+import type { FC, ReactNode } from "react"
+import Head from "next/head"
+import { Header } from "./Header"
 
 type Props = {
   title: string;
@@ -20,5 +20,5 @@ export const Layout: FC<Props> = ({ children, title = "T3 Todo" }) => {
         {children}
       </main>
     </>
-  );
-};
+  )
+}

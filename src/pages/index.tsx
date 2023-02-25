@@ -1,20 +1,19 @@
-import { type NextPage } from "next";
-import { useSession } from "next-auth/react";
-import { Auth } from "../components/Auth";
-import { Layout } from "../components/layouts/Layout";
-import { TaskForm } from "../components/TaskForm";
-import { TaskList } from "../components/TaskList";
-import { Avatar, AvatarImage, AvatarFallback } from "../components/ui/Avatar";
+import { type NextPage } from "next"
+import { useSession } from "next-auth/react"
+import { Auth } from "../components/Auth"
+import { Layout } from "../components/layouts/Layout"
+import { TaskForm } from "../components/TaskForm"
+import { TaskList } from "../components/TaskList"
+import { Avatar, AvatarImage, AvatarFallback } from "../components/ui/Avatar"
 
 const Home: NextPage = () => {
-  const { data: session } = useSession();
-  console.log(session);
+  const { data: session } = useSession()
   if (!session) {
     return (
       <Layout title="Login">
         <Auth />
       </Layout>
-    );
+    )
   }
   return (
     <Layout title="Todo App">
@@ -29,7 +28,7 @@ const Home: NextPage = () => {
       <TaskForm />
       <TaskList />
     </Layout>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

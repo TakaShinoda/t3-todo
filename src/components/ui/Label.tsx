@@ -1,7 +1,7 @@
-import type { ElementRef, ComponentPropsWithoutRef } from "react";
-import { forwardRef } from "react";
-import * as LabelPrimitive from "@radix-ui/react-label";
-import { cn } from "../../utils/cn";
+import type { ElementRef, ComponentPropsWithoutRef } from "react"
+import { forwardRef } from "react"
+import * as LabelPrimitive from "@radix-ui/react-label"
+import { cn } from "../../utils/cn"
 
 const Label = forwardRef<
   ElementRef<typeof LabelPrimitive.Root>,
@@ -15,7 +15,7 @@ const Label = forwardRef<
     )}
     {...props}
   />
-));
-Label.displayName = LabelPrimitive.Root.displayName;
+))
+Label.displayName = LabelPrimitive.Root.displayName
 
-export { Label };
+export { Label }
