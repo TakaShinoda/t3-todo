@@ -1,5 +1,5 @@
-import { createTaskSchema, getSingleTaskSchema, updateTaskSchema, deleteTaskSchema } from '../../../schema/todo'
-import { createTRPCRouter, publicProcedure, protectedProcedure } from '../trpc'
+import { createTaskSchema, getSingleTaskSchema, updateTaskSchema, deleteTaskSchema } from '@/schema/todo'
+import { createTRPCRouter, publicProcedure, protectedProcedure } from '@/server/api/trpc'
 
 
 export const todoRouter = createTRPCRouter({
@@ -47,7 +47,8 @@ export const todoRouter = createTRPCRouter({
         },
         data: {
           title: input.title,
-          body: input.body
+          body: input.body,
+          done: input.done
         }
       })
       return task

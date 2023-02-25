@@ -1,10 +1,10 @@
 import { type NextPage } from "next"
 import { useSession } from "next-auth/react"
-import { Auth } from "../components/Auth"
-import { Layout } from "../components/layouts/Layout"
-import { TaskForm } from "../components/TaskForm"
-import { TaskList } from "../components/TaskList"
-import { Avatar, AvatarImage, AvatarFallback } from "../components/ui/Avatar"
+import { Auth } from "@/components/Auth"
+import { Layout } from "@/components/layouts/Layout"
+import { TaskForm } from "@/components/TaskForm"
+import { TaskList } from "@/components/TaskList"
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/Avatar"
 
 const Home: NextPage = () => {
   const { data: session } = useSession()

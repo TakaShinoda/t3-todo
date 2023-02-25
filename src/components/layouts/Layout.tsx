@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from "react"
 import Head from "next/head"
-import { Header } from "./Header"
+import { Header } from "@/components/layouts/Header"
 
 type Props = {
   title: string;

@@ -3,8 +3,8 @@ import type { NextPage } from "next"
 import { useRouter } from "next/router"
 import { format } from "date-fns"
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid"
-import { api } from "../../utils/api"
-import { Layout } from "../../components/layouts/Layout"
+import { api } from "@/utils/api"
+import { Layout } from "@/components/layouts/Layout"
 
 const SingleTaskPage: NextPage = () => {
   const router = useRouter()
@@ -32,6 +32,12 @@ const SingleTaskPage: NextPage = () => {
               <dt className="text-sm font-medium text-gray-500">Body</dt>
               <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                 {data?.body}
+              </dd>
+            </div>
+            <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
+              <dt className="text-sm font-medium text-gray-500">Done</dt>
+              <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                {`${data?.done}`}
               </dd>
             </div>
             <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
