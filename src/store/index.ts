@@ -1,5 +1,5 @@
 import create from "zustand"
-import type { UpdateTaskInput } from '../schema/todo'
+import type { UpdateTaskInput } from '@/schema/todo'
 
 type State = {
   editedTask: UpdateTaskInput
@@ -12,7 +12,8 @@ const useStore = create<State>((set) => ({
   editedTask: {
     taskId: '',
     title: '',
-    body: ''
+    body: '',
+    done: false
   },
   updateEditedTask: (payload) => set({
     editedTask: payload
@@ -21,7 +22,8 @@ const useStore = create<State>((set) => ({
     editedTask: {
       taskId: '',
       title: '',
-      body: ''
+      body: '',
+      done: false
     },
   })
 }))
