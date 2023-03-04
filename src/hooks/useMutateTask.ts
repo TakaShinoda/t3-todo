@@ -1,10 +1,12 @@
-import useStore from "../store"
-import { api } from "../utils/api"
+import useStore from "@/store"
+import { api } from "@/utils/api"
+import { useToast } from '@/hooks/useToast'
 
 
 export const useMutateTask = () => {
   const utils = api.useContext()
   const reset = useStore((state) => state.resetEditedTask)
+  const { toast } = useToast()
 
   const createTaskMutation = api.todo.createTask.useMutation({
     onSuccess: (res) => {
@@ -14,6 +16,11 @@ export const useMutateTask = () => {
         utils.todo.getTasks.setData(undefined, [res, ...prevTodos])
       }
       reset()
+      console.log(res)
+      toast({
+        title: "Create",
+        description: `${res.title} を作成しました`,
+      })
     },
   })
   const updateTaskMutation = api.todo.updateTask.useMutation({
@@ -25,6 +32,10 @@ export const useMutateTask = () => {
         )
       }
       reset()
+      toast({
+        title: "Update",
+        description: `${res.title} を更新しました`,
+      })
     }
   })
   const deleteTaskMutation = api.todo.deleteTask.useMutation({
@@ -38,6 +49,10 @@ export const useMutateTask = () => {
         )
       }
       reset()
+      toast({
+        title: "Delete",
+        description: "削除",
+      })
     }
   })
 
