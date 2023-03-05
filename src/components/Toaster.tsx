@@ -1,5 +1,5 @@
-import type { FC } from "react"
-import { useToast } from "@/hooks/useToast"
+import type { FC } from 'react'
+import { useToast } from '@/hooks/useToast'
 import {
   Toast,
   ToastClose,
@@ -7,7 +7,7 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "@/components/ui/Toast"
+} from '@/components/ui/Toast'
 
 export const Toaster: FC = () => {
   const { toasts } = useToast()

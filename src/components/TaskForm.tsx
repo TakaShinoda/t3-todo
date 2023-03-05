@@ -1,6 +1,6 @@
-import type { FC, FormEvent } from "react"
-import useStore from "@/store"
-import { useMutateTask } from "@/hooks/useMutateTask"
+import type { FC, FormEvent } from 'react'
+import useStore from '@/store'
+import { useMutateTask } from '@/hooks/useMutateTask'
 
 export const TaskForm: FC = () => {
   const { createTaskMutation, updateTaskMutation } = useMutateTask()
@@ -9,7 +9,7 @@ export const TaskForm: FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (editedTask.taskId === "") {
+    if (editedTask.taskId === '') {
       createTaskMutation.mutate({
         title: editedTask.title,
         body: editedTask.body,
@@ -33,7 +33,7 @@ export const TaskForm: FC = () => {
         type="text"
         className="mb-3 rounded-md border border-gray-300 px-3 py-2 shadow-sm"
         placeholder="Title"
-        value={editedTask.title || ""}
+        value={editedTask.title || ''}
         onChange={(e) => update({ ...editedTask, title: e.target.value })}
       />
       <p className="mb-3 text-pink-500">
@@ -43,7 +43,7 @@ export const TaskForm: FC = () => {
       <textarea
         className="mb-3 rounded-md border border-gray-300 px-3 py-2 shadow-sm"
         placeholder="Body"
-        value={editedTask.body || ""}
+        value={editedTask.body || ''}
         onChange={(e) => update({ ...editedTask, body: e.target.value })}
       />
       <p className="mb-3 text-pink-500">
@@ -72,7 +72,7 @@ export const TaskForm: FC = () => {
         </div>
       )}
       <button className="mb-4 rounded bg-blue-600 py-1 px-3 text-white hover:bg-blue-700 focus:outline-none">
-        {editedTask.taskId === "" ? "Create" : "Update"}
+        {editedTask.taskId === '' ? 'Create' : 'Update'}
       </button>
     </form>
   )

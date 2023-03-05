@@ -1,9 +1,9 @@
-import type { FC } from "react"
-import Link from "next/link"
-import useStore from "@/store"
-import type { UpdateTaskInput } from "@/schema/todo"
-import { PencilIcon, TrashIcon, CheckIcon } from "@heroicons/react/24/solid"
-import { useMutateTask } from "@/hooks/useMutateTask"
+import type { FC } from 'react'
+import Link from 'next/link'
+import useStore from '@/store'
+import type { UpdateTaskInput } from '@/schema/todo'
+import { PencilIcon, TrashIcon, CheckIcon } from '@heroicons/react/24/solid'
+import { useMutateTask } from '@/hooks/useMutateTask'
 import {
   Dialog,
   DialogContent,
@@ -13,7 +13,7 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
-} from "@/components/ui/Dialog"
+} from '@/components/ui/Dialog'
 
 export const TaskItem: FC<UpdateTaskInput> = ({
   taskId,

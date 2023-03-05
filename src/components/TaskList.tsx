@@ -1,5 +1,5 @@
-import { api } from "@/utils/api"
-import { TaskItem } from "@/components/TaskItem"
+import { api } from '@/utils/api'
+import { TaskItem } from '@/components/TaskItem'
 
 export const TaskList = () => {
   // サーバーサイドの関数をリモートプロシージャーコールで呼びに行ってデータを取得

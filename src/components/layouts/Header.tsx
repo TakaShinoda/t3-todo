@@ -1,7 +1,7 @@
-import type { FC } from "react"
-import { signOut, useSession } from "next-auth/react"
-import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid"
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/Avatar"
+import type { FC } from 'react'
+import { signOut, useSession } from 'next-auth/react'
+import { ArrowLeftOnRectangleIcon } from '@heroicons/react/24/solid'
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/Avatar'
 
 export const Header: FC = () => {
   const { data: session } = useSession()
@@ -9,7 +9,7 @@ export const Header: FC = () => {
     return <></>
   }
   const goTop = () => {
-    window.location.href = "/"
+    window.location.href = '/'
   }
 
   const logout = () => {

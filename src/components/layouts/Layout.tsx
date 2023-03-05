@@ -1,13 +1,13 @@
-import type { FC, ReactNode } from "react"
-import Head from "next/head"
-import { Header } from "@/components/layouts/Header"
+import type { FC, ReactNode } from 'react'
+import Head from 'next/head'
+import { Header } from '@/components/layouts/Header'
 
 type Props = {
-  title: string;
-  children: ReactNode;
-};
+  title: string
+  children: ReactNode
+}
 
-export const Layout: FC<Props> = ({ children, title = "T3 Todo" }) => {
+export const Layout: FC<Props> = ({ children, title = 'T3 Todo' }) => {
   return (
     <>
       <Head>

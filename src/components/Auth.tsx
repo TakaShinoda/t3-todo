@@ -1,5 +1,5 @@
-import type { FC } from "react"
-import { signIn } from "next-auth/react"
+import type { FC } from 'react'
+import { signIn } from 'next-auth/react'
 
 export const Auth: FC = () => {
   return (
@@ -21,7 +21,7 @@ export const Auth: FC = () => {
             <div className="mt-6 grid grid-cols-1 gap-3">
               <div>
                 <button
-                  onClick={() => signIn("github")}
+                  onClick={() => signIn('github')}
                   className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-zinc-800"
                 >
                   <span className="sr-only">Sign in with GitHub</span>
