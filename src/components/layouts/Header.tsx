@@ -12,9 +12,9 @@ export const Header: FC = () => {
     window.location.href = '/'
   }
 
-  const logout = () => {
-    signOut()
-    // goTop()
+  const logout = async () => {
+    await signOut()
+    goTop()
   }
 
   return (
