@@ -14,7 +14,7 @@ export const Header: FC = () => {
 
   const logout = () => {
     signOut()
-    goTop()
+    // goTop()
   }
 
   return (
